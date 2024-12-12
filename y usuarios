@@ -1,0 +1,23 @@
+[33mcommit 26a9d182eaa4482ec50ca96f4c246ca537b7eaa8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: andreswebit <andres_peral@hotmail.com>
+Date:   Thu Dec 5 10:56:27 2024 -0300
+
+    Implementación completa de CRUD para productos y usuarios
+
+[33mcommit 25967f0a8f40e99223c436e2d7d7b6a956cbafee[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: andreswebit <andres_peral@hotmail.com>
+Date:   Tue Oct 15 11:52:52 2024 -0300
+
+    agragado funcionalidades put post get delete
+
+[33mcommit 7296d923107b11aa77198c14c640282794ebdd2f[m
+Author: andreswebit <andres_peral@hotmail.com>
+Date:   Wed Oct 9 19:38:39 2024 -0300
+
+    Configuración básica del proyecto de e-commerce
+
+[33mcommit eacfb79e026c6cb23e157cd8b85d96ab69c6336b[m
+Author: andreswebit <andres_peral@hotmail.com>
+Date:   Wed Oct 9 13:14:47 2024 -0300
+
+    Inicialización del proyecto de e-commerce
