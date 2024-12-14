@@ -1,6 +1,13 @@
+import Home from "./Home";
+
+
 const Header = () => {
-    return <header><h1>Header</h1></header>;
-  };
-  
-  export default Header;
-  
+  return (
+    <header>
+      <h1>Tienda On LIne </h1>
+      <Home/>
+    </header>
+  );
+};
+
+export default Header;

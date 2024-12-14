@@ -1,6 +1,9 @@
 const Footer = () => {
-    return <footer><p>Footer</p></footer>;
-  };
-  
-  export default Footer;
-  
+  return (
+    <footer>
+      <p>Todos los derechos reservados © 2024</p>
+    </footer>
+  );
+};
+
+export default Footer;
