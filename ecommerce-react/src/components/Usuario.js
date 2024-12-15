@@ -20,7 +20,7 @@ const Usuario = (props) => {
         <div>
           <p>Email: {usuario.email}</p>
           <p>Teléfono: {usuario.phone}</p>
-          <p>Compañía: {usuario.company.name}</p>
+          {usuario.company && <p>Compañía: {usuario.company.name}</p>}
         </div>
       )}
     </div>

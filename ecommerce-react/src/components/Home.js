@@ -1,28 +1,17 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Usuarios from "./Usuarios";
+// import React, { useState, useEffect } from "react";
+//import axios from "axios";
+// import Usuarios from "./Usuarios";
+// import ProductList from "./ProductList";
+import React from "react";
+
 
 const Home = () => {
-  const [usuarios, setUsuarios] = useState([]);
-
-  useEffect(() => {
-    // Realizar solicitud a una API fake
-    const fetchUsuarios = async () => {
-      try {
-        const response = await axios.get("https://jsonplaceholder.typicode.com/users");
-        setUsuarios(response.data);
-      } catch (error) {
-        console.error("Error al obtener los datos:", error);
-      }
-    };
-    fetchUsuarios();
-  }, []);
-
   return (
     <div>
-      <h1>Bienvenidos a nuestra tienda online</h1>
-      <p>¡Explora una variedad de productos y ofertas exclusivas!</p>
-      <Usuarios usuarios={usuarios} />
+      <h1>Bienvenidos a nuestra tienda online de Repuestos Toyota</h1>
+      <p>¡Explora una variedad de Repuestos Originales y ofertas exclusivas!</p>
+      {/* <Usuarios usuarios={usuarios} />
+      <ProductList productos={productos} /> */}
     </div>
   );
 };
