@@ -3,11 +3,14 @@ import ReactDOM from "react-dom/client";
 
 import App from "./App";
 import { BrowserRouter } from "react-router-dom"; // se agrega react dom
+import { CartProvider } from "./components/CartContext"; // consigna 15
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <App />
+    <CartProvider>
+      <App />
+    </CartProvider>
   </BrowserRouter>
 );
 

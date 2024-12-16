@@ -8,6 +8,7 @@ import Usuario from "./components/Usuario";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import sw4 from "./images/sw4.png";
+import Cart from "./components/Cart";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/products" element={<ProductList  />} />
         <Route path="/users" element={<Usuarios />} />
         <Route path="/user/:id" element={<Usuario />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <NavBar />
       <Footer />
