@@ -107,14 +107,50 @@
 
     ///////////////////////consigna 14 //////////////////
 
-    import React from "react";
+//     import React from "react";
+// import Producto from "./Producto";
+// import useFetch from "../hooks/useFetch";
+// // import { useCart } from "../components/CartContext";
+
+// const ProductList = () => {
+//   const { data: productos, loading, error  } = useFetch("https://fakestoreapi.com/products");
+//   const { addToCart } = useCart();
+
+//   if (loading) return <p>Cargando productos...</p>;
+//   if (error) return <p>Error: {error}</p>;
+
+//   return (
+//     <div>
+//       <h2>Lista de Productos</h2>
+//       <ul>
+//         {productos.map((producto) => (
+//           <li key={producto.id}>
+//             <Producto producto={producto} addToCart={addToCart} />
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
+
+// export default ProductList;
+//////////////////////////////////redux////////////consig 15 //////////////////
+
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchProducts } from "../redux/slices/productsSlice";
+import { addToCart } from "../redux/slices/cartSlice";
 import Producto from "./Producto";
-import useFetch from "../hooks/useFetch";
-import { useCart } from "../components/CartContext";
 
 const ProductList = () => {
-  const { data: productos, loading, error  } = useFetch("https://fakestoreapi.com/products");
-  const { addToCart } = useCart();
+  const dispatch = useDispatch();
+  const { items: productos, loading, error } = useSelector(
+    (state) => state.products
+  );
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
   if (loading) return <p>Cargando productos...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -125,7 +161,10 @@ const ProductList = () => {
       <ul>
         {productos.map((producto) => (
           <li key={producto.id}>
-            <Producto producto={producto} addToCart={addToCart} />
+            <Producto
+              producto={producto}
+              addToCart={() => dispatch(addToCart(producto))}
+            />
           </li>
         ))}
       </ul>

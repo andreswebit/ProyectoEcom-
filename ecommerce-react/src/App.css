@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -18,7 +18,7 @@ code {
   flex-direction: column;
   align-items: center;
   background: linear-gradient(45deg, #2c2c2c04, #69696977); /* Degradado gris */
-  font-family: 'Arial', sans-serif; /* Cambia según tu preferencia */
+  font-family: "Arial", sans-serif; /* Cambia según tu preferencia */
   color: white; /* Color base de texto */
   text-align: center;
   overflow: hidden;
@@ -38,13 +38,13 @@ code {
 
 /* Fondo con logo de Toyota */
 .App::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('./images/logoFondo.png'); /* Asegúrate de tener este logo */
+  background-image: url("./images/logoFondo.png"); /* Asegúrate de tener este logo */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -54,7 +54,6 @@ code {
 
 /* Logo principal en el costado */
 .App-logo {
-  
   position: absolute;
   top: 20px;
   left: 20px;
@@ -151,12 +150,12 @@ table {
   margin: 20px 0;
 }
 
-table th, table td {
+table th,
+table td {
   padding: 10px;
   border: 1px solid #ddd;
   font-size: calc(15px + 1vmin); /* Letras más grandes */
 }
-
 
 /* ////////////////navbar ///// */
 
@@ -180,7 +179,7 @@ nav ul {
 
 nav li {
   text-align: center;
-} 
+}
 
 .nav-link {
   display: block;
@@ -203,3 +202,156 @@ nav li {
   color: white; /* Texto del enlace activo */
 }
 
+/* Contenedor de cada producto */
+.producto-container {
+  border: 1px solid gray;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto-container:hover {
+  transform: scale(1.02); /* Aumenta ligeramente el tamaño al pasar el cursor */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Título del producto */
+.producto-title {
+  cursor: pointer;
+  color: blue;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Botones */
+.btn {
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.95); /* Botón ligeramente más pequeño al hacer clic */
+}
+
+/* Botón Agregar */
+.agregar {
+  background-color: green;
+  color: white;
+}
+
+.agregar:hover {
+  background-color: darkgreen;
+}
+
+/* Mensaje temporal */
+.mensaje {
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+  animation: fade-in-out 2s ease;
+}
+
+/* Animación de entrada y salida del mensaje */
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Contenedor del carrito */
+.cart-container {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  font-family: Arial, sans-serif;
+}
+
+/* Título del carrito */
+.cart-container h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Lista de elementos del carrito */
+.cart-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Elemento del carrito */
+.cart-item {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.cart-item:hover {
+  transform: scale(1.02); /* Efecto de agrandamiento al pasar el cursor */
+}
+
+/* Título del producto en el carrito */
+.cart-item-title {
+  font-weight: bold;
+  color: #555;
+}
+
+/* Botón eliminar */
+.btn.eliminar {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn.eliminar:hover {
+  background-color: darkred;
+}
+
+.btn.eliminar:active {
+  transform: scale(0.95); /* Efecto al hacer clic */
+}
+
+/* Mensaje cuando el carrito está vacío */
+.cart-empty {
+  text-align: center;
+  font-size: 1.2em;
+  color: #999;
+}
+
+/* Total del carrito */
+.cart-total {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
