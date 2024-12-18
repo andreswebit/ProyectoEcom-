@@ -12,7 +12,7 @@ const cartSlice = createSlice({
       state.items.push(action.payload); // Agrega el producto al carrito
     },
     removeFromCart: (state, action) => {
-      state.items = state.items.filter((item) => item.id !== action.payload.id); // Elimina un producto del carrito
+      state.items = state.items.filter((item) => item.id !== action.payload); // Elimina un producto del carrito
     },
   },
 });

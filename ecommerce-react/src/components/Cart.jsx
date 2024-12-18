@@ -97,7 +97,7 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   const handleRemoveFromCart = (id) => {
-    dispatch(removeFromCart({ id })); // Envía la acción para eliminar el producto del carrito
+    dispatch(removeFromCart(id)); // Envía la acción para eliminar el producto del carrito
   };
 
   if (cart.length === 0) {
