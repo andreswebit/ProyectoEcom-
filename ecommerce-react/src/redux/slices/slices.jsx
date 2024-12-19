@@ -1,3 +1,5 @@
+
+////////////////REDUX/SLICES.JSX////////////////////////////////
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {

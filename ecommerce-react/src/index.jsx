@@ -25,6 +25,8 @@
 
 
 /////////////////////////consigana 15 /////////////////////
+
+////////////////////////INDEX.JSX//////////////////////
 import React from "react";
 import ReactDOM from "react-dom/client";
 import store from "./redux/store"; // Importa la store de Redux

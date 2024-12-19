@@ -1,3 +1,6 @@
+
+/////////////FOOTER JSX///////////
+
 const Footer = () => {
   return (
     <footer>
