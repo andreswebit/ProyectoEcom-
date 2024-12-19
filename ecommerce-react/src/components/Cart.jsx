@@ -86,45 +86,80 @@
 
 // export default Cart;
 
-///////////////////////
+/////////////////////// CART. JSX/////////////
+
 
 import React from "react";
-import { useSelector, useDispatch } from "react-redux"; // Hooks de Redux
-import { removeFromCart } from "../redux/slices/cartSlice"; // Acción para eliminar productos del carrito
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart } from "../redux/slices/cartSlice";
 
 const Cart = () => {
-  const cart = useSelector((state) => state.cart.items); // Obtén los productos del carrito desde la store
   const dispatch = useDispatch();
+  
+  const cart = useSelector((state) => state.cart.item);
 
-  const handleRemoveFromCart = (id) => {
-    dispatch(removeFromCart(id)); // Envía la acción para eliminar el producto del carrito
+
+  const handleRemoveFromCart = (productId) => {
+    dispatch(removeFromCart(productId));
   };
 
-  if (cart.length === 0) {
-    return <p className="cart-empty">El carrito está vacío</p>;
-  }
+  // Calcular el total
+  const total = cart.reduce(
+    (acc, product) => acc + product.price * product.quantity,
+    0
+  );
+
+  // Formatear el total como moneda
+  const formattedTotal = new Intl.NumberFormat('es-AR', {
+    style: 'currency',
+    currency: 'ARS',
+  }).format(total);
 
   return (
     <div className="cart-container">
-      <h2>Carrito de Compras</h2>
-      <ul className="cart-list">
-        {cart.map((item) => (
-          <li key={item.id} className="cart-item">
-            <p className="cart-item-title">{item.title}</p>
-            <p>Precio: ${item.price}</p>
-            <button
-              onClick={() => handleRemoveFromCart(item.id)}
-              className="btn eliminar"
-            >
-              Eliminar
-            </button>
-          </li>
-        ))}
-      </ul>
-      <p className="cart-total">
-        <strong>Total:</strong> $
-        {cart.reduce((acc, item) => acc + item.price, 0)}
-      </p>
+      <h2 className="cart-title">Carrito de Compras</h2>
+      {cart.length === 0 ? (
+        <p className="cart-empty">El carrito está vacío</p>
+      ) : (
+        <table className="cart-table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Total</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {cart.map((product, index) => (
+              <tr key={index}>
+                <td>{product.title || product.name}</td>
+                <td>{new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(product.price)}</td>
+                <td>{product.quantity}</td>
+                <td>{new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(product.price * product.quantity)}</td>
+                <td>
+                  <button 
+                    className="remove-button" 
+                    onClick={() => handleRemoveFromCart(product.id)}
+                  >
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+      <h3 className="cart-total">Total: {formattedTotal}</h3>
+      {cart.length > 0 && (
+        <button
+          className="checkout-button"
+          onClick={() => window.open("https://www.visa.com.ar", "_blank")}
+        >
+          Finalizar Compra
+        </button>
+      )}
     </div>
   );
 };

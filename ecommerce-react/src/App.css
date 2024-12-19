@@ -1,3 +1,6 @@
+
+/* ///////////////////// APP.CSS */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -354,4 +357,311 @@ nav li {
   color: #333;
   text-align: center;
   margin-top: 20px;
+}
+
+/* Estilos para la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+/* Estilos para la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+button {
+  padding: 10px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.panel-buttons { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+  margin-top: 20px; 
+} 
+
+.producto-container { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  margin: 10px; 
+} 
+
+.producto-title { 
+  cursor: pointer; 
+  color: blue; 
+  font-weight: bold; 
+  margin-bottom: 5px; 
+} 
+
+/* /////////////////////////////////////////////////////// */
+
+
+/* cart.css */
+
+.cart-container {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.cart-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.cart-empty {
+  color: #f44336;
+  font-size: 1.2rem;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.cart-table th, .cart-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.remove-button {
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.remove-button:hover {
+  background-color: #d32f2f;
+}
+
+.cart-total {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.checkout-button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.checkout-button:hover {
+  background-color: #388e3c;
+}
+
+
+
+
+/* Estilos específicos para ProductList */
+.product-list {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.product-list h2 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.product-list-table th,
+.product-list-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.product-list-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.add-to-cart-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #45a049;
+}
+
+.mensaje {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+}
+/* Clase para la animación del botón */
+.button-add-to-cart {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.button-add-to-cart.clicked {
+  transform: scale(1.1); /* Agranda el botón temporalmente */
+}
+
+.button-add-to-cart:focus {
+  outline: none;
+}
+
+/* Animación para darle un efecto de "salto" al botón */
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+.button-add-to-cart.bounce {
+  animation: bounce 0.5s ease;
+}
+/* App.css */
+
+/* Estilos generales del formulario */
+.form-user__form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.form-user__input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-user__submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-user__submit-button:hover {
+  background-color: #0056b3;
+}
+
+.form-user__back-link {
+  display: inline-block;
+  margin: 10px 0;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form-user__back-link:hover {
+  text-decoration: underline;
+}
+
+.form-user__success-message {
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+}
+
+.form-user__user-list {
+  margin-top: 30px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.form-user__user-list-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.form-user__user-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.form-user__title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
 }

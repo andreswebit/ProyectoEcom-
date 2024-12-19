@@ -81,6 +81,8 @@
 
 // export default Producto;
 
+//////////////////////PRODUCTO.JSX///////////////////////
+
 import React, { useState } from "react";
 import { useDispatch } from "react-redux"; // Hook de Redux para enviar acciones
 import { addToCart } from "../redux/slices/cartSlice"; // Acción para añadir productos al carrito
